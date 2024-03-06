@@ -22,6 +22,8 @@
     $Arguments.UseBasicParsing = $true
     Write-Debug "Arguments: $($Arguments | ConvertTo-Json)"
 
+    Write-Host "Debug4: $( $Arguments | ConvertTo-Json )"
+
     # Issue request
     try { $Result = Invoke-WebRequest @Arguments }
     catch {
@@ -67,6 +69,7 @@
 
         return Write-Error ($ErrorMessage | Out-String)
     }
+    Write-Host "Debug5: $( $Result.Sessions )"
 
     # Not sure this will be hit with current iwr error handling
     # May need to move to catch block need to find test

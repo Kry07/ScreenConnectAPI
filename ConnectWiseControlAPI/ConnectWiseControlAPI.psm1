@@ -22,3 +22,4 @@ $script:timeZoneOffset = New-Timespan -hours (((get-timezone).baseUtcOffset).hou
 
 # Export Public functions ($Public.BaseName) for WIP modules
 Export-ModuleMember -Function $Public.Basename
+Export-ModuleMember -Function $Private.Basename
